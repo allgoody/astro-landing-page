@@ -1,0 +1,55 @@
+---
+// src/components/CarouselLightboxSection.astro
+import CarouselLightbox from './CarouselLightbox';
+
+// Import your images
+import image1 from "../assets/testimonial-01.png";
+import image2 from "../assets/testimonial-02.png";
+import image3 from "../assets/testimonial-03.png";
+import image4 from "../assets/testimonial-04.png";
+import image5 from "../assets/testimonial-05.png";
+import image6 from "../assets/testimonial-06.png";
+import image7 from "../assets/testimonial-07.png";
+import image8 from "../assets/testimonial-08.png";
+import image9 from "../assets/testimonial-09.png";
+import image10 from "../assets/testimonial-10.png";
+import image11 from "../assets/testimonial-11.png";
+import image12 from "../assets/testimonial-12.png";
+import image13 from "../assets/testimonial-13.png";
+import image14 from "../assets/testimonial-14.png";
+import image15 from "../assets/testimonial-15.png";
+
+const images = [
+    { src: image1.src, alt: "отзыв о курсе 1" },
+    { src: image2.src, alt: "отзыв о курсе 2" },
+    { src: image3.src, alt: "отзыв о курсе 3" },
+    { src: image4.src, alt: "отзыв о курсе 4" },
+    { src: image5.src, alt: "отзыв о курсе 5" },
+    { src: image6.src, alt: "отзыв о курсе 6" },
+    { src: image7.src, alt: "отзыв о курсе 7" },
+    { src: image8.src, alt: "отзыв о курсе 8" },
+    { src: image9.src, alt: "отзыв о курсе 9" },
+    { src: image10.src, alt: "отзыв о курсе 10" },
+    { src: image11.src, alt: "отзыв о курсе 11" },
+    { src: image12.src, alt: "отзыв о курсе 12" },
+    { src: image13.src, alt: "отзыв о курсе 13" },
+    { src: image14.src, alt: "отзыв о курсе 14" },
+    { src: image15.src, alt: "отзыв о курсе 15" },
+];
+---
+
+<section id="gallery" class="container py-24 sm:py-32 flex flex-col items-center overflow-hidden">
+    <h2 class="text-3xl md:text-4xl font-bold">
+        Что
+        <span class="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+            {" "}Говорят{" "}
+        </span>
+        Люди
+    </h2>
+
+    <p class="text-xl text-muted-foreground pt-4 pb-8">
+        Отзывы людей с которыми я работала и обучала
+    </p>
+
+    <CarouselLightbox client:load images={images} />
+</section>
