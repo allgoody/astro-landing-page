@@ -1,6 +1,7 @@
 ---
 // src/components/CarouselLightboxSection.astro
 import CarouselLightbox from './CarouselLightbox';
+import ContentSection from "~/components/content-section.astro";
 
 // Import your images
 import image1 from "../assets/testimonial-01.png";
@@ -38,11 +39,11 @@ const images = [
 ];
 ---
 
-<section id="gallery" class="container py-24 sm:py-32 flex flex-col items-center overflow-hidden">
+<!-- <ContentSection title="Gallery" id="gallery">
     <h2 class="text-3xl md:text-4xl font-bold">
         Что
-        <span class="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-            {" "}Говорят{" "}
+        <span class="bg-gradient-to-b from-primary/60 to-primary bg-clip-text text-primary">
+            Говорят
         </span>
         Люди
     </h2>
@@ -52,4 +53,15 @@ const images = [
     </p>
 
     <CarouselLightbox client:load images={images} />
-</section>
+</ContentSection> -->
+
+
+<ContentSection title="Отзывы" id="gallery">
+    <Fragment slot="lead">
+      Что <span class="text-primary">Говорят</span> Люди.{" "}
+      <span class="text-primary">Отзывы тех</span> с кем я работала и обучала{" "}
+    </Fragment>
+    <div class="max-w-6xl space-y-2">
+      <CarouselLightbox client:load images={images} />
+    </div>
+  </ContentSection>

@@ -1,4 +1,3 @@
-// src/components/CarouselLightbox.tsx
 import { useState } from "react";
 import { CircleArrowRight, CircleArrowLeft, CircleX } from "lucide-react";
 import { Card, CardContent } from "~/components/ui/card";
@@ -61,24 +60,24 @@ export default function CarouselLightbox({ images }: CarouselLightboxProps) {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="bg-inherit" />
+                <CarouselNext className="bg-inherit" />
             </Carousel>
             
             {lightboxOpen && (
                 <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-70 z-50">
                     <div className="relative max-w-4xl max-h-5/6 bg-white rounded-lg shadow-lg p-4 overflow-auto">
                         <button
-                            className="absolute top-8 right-8 text-gray-600 text-2xl focus:outline-none"
+                            className="absolute top-8 right-4 text-gray-600 text-2xl focus:outline-none"
                             onClick={closeLightbox}
                         >
                             <CircleX className="size-12"/>
                         </button>
                         <button
-                            className="absolute left-8 top-1/2 text-gray-600 text-2xl focus:outline-none"
+                            className="absolute left-4 top-1/2 text-gray-600 text-2xl focus:outline-none"
                             onClick={handlePrevImage}
                         >
-                            <CircleArrowLeft className="size-8"/>
+                            <CircleArrowLeft className="size-12"/>
                         </button>
 
                         <img
@@ -91,7 +90,7 @@ export default function CarouselLightbox({ images }: CarouselLightboxProps) {
                             className="absolute right-8 top-1/2 text-gray-600 text-2xl focus:outline-none"
                             onClick={handleNextImage}
                         >
-                            <CircleArrowRight className="size-8"/>
+                            <CircleArrowRight className="size-12"/>
                         </button>
                     </div>
                 </div>
